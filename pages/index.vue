@@ -3,16 +3,15 @@
     <div id="about_us" class="contents">
       aboutus
     </div>
-    <contact />
   </div>
 </template>
 
 <script>
-import Contact from '~/components/contact.vue'
+//import Contact from '~/components/contact.vue'
 
 export default {
   components: {
-    Contact
+    //Contact
   }
 }
 </script>
