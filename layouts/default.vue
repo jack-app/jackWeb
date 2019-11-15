@@ -1,13 +1,17 @@
 <template>
 <div class="layout">
-  <nav class="navbar">
-    <div class="navbar-start">
-      <img src="#" alt="jackのアイコン">
-    </div>
-    <div class="navbar-end">
-      <p class="navbar-item"><a>Home</a></p>
-      <p class="navbar-item"><a>Works</a></p>
-      <p class="navbar-item"><a>Contacts</a></p>
+  <nav class="navbar has-shadow">
+    <div class="container">
+      <div class="navbar-start">
+        <div class="navbar-brand jack-icon">
+          <img src="~/static/jack-icon.png" alt="jackのアイコン">
+        </div>
+        </div>
+      <div class="navbar-end">
+        <p class="navbar-item"><a>Home</a></p>
+        <p class="navbar-item"><a>Works</a></p>
+        <p class="navbar-item"><a>Contacts</a></p>
+      </div>
     </div>
   </nav>
   <nuxt />
@@ -38,12 +42,13 @@ html {
   margin: 0;
 }
 
-.layout{
-  background-color: #F6F6F7;
+.jack-icon{
+  width: 100px;
+  height: 100px;
 }
 
-.navbar{
-  background-color: #FDBE46;
+.navbar-start{
+  margin-left: 20px;
 }
 
 .footer{
