@@ -1,7 +1,45 @@
 <template>
   <div class="container">
-    <div id="about_us" class="contents">
-      aboutus
+    <div class="show contents">
+      <div class="show_wrapper">
+        <p>exapmle product</p>
+      </div>
+    </div>
+    <div class="about contents">
+      <div class="about_wrapper">
+        <div class="title">
+          <h1>About us</h1>
+          <p>jackについて</p>
+        </div>
+        <div class="details">
+          <p>jackはほげほげほげほげ<br>ほげほげほげほげ<br>ほげほげほげほげほげ</p>
+        </div>
+      </div>
+    </div>
+    <div class="works contents">
+      <div class="works_wrapper">
+        <div class="title">
+          <h1>Works</h1>
+        </div>
+        <div class="details colums">
+          <div class="work column">
+            <img src="##" alt="なんかのげーむ">
+          </div>
+          <div class="work column">
+            <img src="##" alt="なんかのげーむ">
+          </div>
+          <div class="work column">
+            <img src="##" alt="なんかのげーむ">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact contents">
+      <div class="contact_wrapper">
+        <div class="title">
+          <h1>Contact</h1>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,34 +55,37 @@ export default {
 </script>
 
 <style>
+h1{
+  font-weight: bold;
+}
+
 .container {
-  margin: 0 auto;
+  margin: 0;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  min-width: 100vw;
+  /*display: flex;
+  justify-content: center;*/
   align-items: center;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.contents{
+  width: 100%;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.title{
+  padding-top: 50px;
 }
 
-.links {
-  padding-top: 15px;
+.show_wrapper{
+  height: 80vh;
+}
+
+.about{
+  background-color: #FDBE46;
+}
+
+.contact{
+  background-color: #FFE0A5;
 }
 </style>
