@@ -1,29 +1,27 @@
 <template>
-<div>
-  <navbar />
+<div class="layout">
+  <nav class="navbar">
+    <div class="navbar-start">
+      <img src="#" alt="jackのアイコン">
+    </div>
+    <div class="navbar-end">
+      <p class="navbar-item"><a>Home</a></p>
+      <p class="navbar-item"><a>Works</a></p>
+      <p class="navbar-item"><a>Contacts</a></p>
+    </div>
+  </nav>
   <nuxt />
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>2020@jackun</p>    
+      <p>2020@jackun</p>
     </div>
   </footer>
 </div>
 </template>
 
-<script>
-import Navbar from '~/components/Navbar.vue'
-
-export default {
-  components: {
-    Navbar
-  }
-}
-</script>
-
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -38,6 +36,14 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.layout{
+  background-color: #F6F6F7;
+}
+
+.navbar{
+  background-color: #FDBE46;
 }
 
 .footer{
