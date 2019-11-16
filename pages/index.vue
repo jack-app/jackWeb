@@ -1,27 +1,37 @@
 <template>
   <div class="container">
-    <div class="show contents">
-      <div class="show_wrapper">
-        <p>exapmle product</p>
+    <section id="home">
+      <div class="contents">
+        <div class="details columns">
+          <div class="work_img column">
+            <img src="##" alt="なんかのプロダクト">
+          </div>
+          <div class="work_caption column">
+            <h1 class="title">プロダクトのなまえ</h1>
+            <p>ひとこと</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="about contents">
-      <div class="about_wrapper">
-        <div class="title">
-          <h1>About us</h1>
-          <p>jackについて</p>
+    </section>
+
+    <section id="about">
+      <div class="contents">
+        <div class="caption">
+          <h1 class="title is-1">About us</h1>
+          <p class="subtitle is-4">jackについて</p>
         </div>
         <div class="details">
           <p>jackはほげほげほげほげ<br>ほげほげほげほげ<br>ほげほげほげほげほげ</p>
         </div>
       </div>
-    </div>
-    <div class="works contents">
-      <div class="works_wrapper">
-        <div class="title">
-          <h1>Works</h1>
+    </section>
+
+    <section id="works">
+      <div class="contents">
+        <div class="caption">
+          <h1 class="title is-1">Works</h1>
         </div>
-        <div class="details colums">
+        <div class="details columns">
           <div class="work column">
             <img src="##" alt="なんかのげーむ">
           </div>
@@ -33,14 +43,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="contact contents">
-      <div class="contact_wrapper">
-        <div class="title">
-          <h1>Contact</h1>
+    </section>
+
+    <section id="contact">
+      <div class="contents">
+        <div class="caption">
+          <h1 class="title is-1">Contact</h1>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -55,12 +66,7 @@ export default {
 </script>
 
 <style>
-h1{
-  font-weight: bold;
-}
-
 .container {
-  margin: 0;
   min-height: 100vh;
   min-width: 100vw;
   /*display: flex;
@@ -71,21 +77,38 @@ h1{
 
 .contents{
   width: 100%;
+  padding: 50px;
+}
+
+img{
+  border: 2px solid #000;
 }
 
 .title{
   padding-top: 50px;
 }
 
-.show_wrapper{
+#home{
   height: 80vh;
+  margin-top: 100px;
 }
 
-.about{
+.work_img{
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about{
   background-color: #FDBE46;
 }
 
-.contact{
+.details{
+  padding: 50px;
+}
+
+#contact{
   background-color: #FFE0A5;
 }
 </style>

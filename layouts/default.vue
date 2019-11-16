@@ -1,16 +1,17 @@
 <template>
 <div class="layout">
-  <nav class="navbar has-shadow">
+  <nav class="navbar has-shadow is-fixed-top">
     <div class="container">
-      <div class="navbar-start">
-        <div class="navbar-brand jack-icon">
-          <img src="~/static/jack-icon.png" alt="jackのアイコン">
+      <div class="navbar-brand jack-icon">
+        <img src="~/static/jack-icon.png" alt="jackのアイコン">
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <p class="navbar-item"><a href="#home">Home</a></p>
+          <p class="navbar-item"><a href="#about">About us</a></p>
+          <p class="navbar-item"><a href="#works">Works</a></p>
+          <p class="navbar-item"><a href="#contact">Contact</a></p>
         </div>
-        </div>
-      <div class="navbar-end">
-        <p class="navbar-item"><a>Home</a></p>
-        <p class="navbar-item"><a>Works</a></p>
-        <p class="navbar-item"><a>Contacts</a></p>
       </div>
     </div>
   </nav>
@@ -47,8 +48,14 @@ html {
   height: 100px;
 }
 
-.navbar-start{
-  margin-left: 20px;
+@media screen and (max-width: 1023px)
+  .jack-icon{
+    width: 50px;
+    height: 50px;
+  }
+
+.navbar .container{
+  padding: 0 20px;
 }
 
 .footer{
