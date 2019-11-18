@@ -2,14 +2,31 @@
   <div class="container">
     <section id="home">
       <div class="contents">
-        <div class="details columns">
-          <div class="work_img column">
-            <img src="##" alt="なんかのプロダクト">
-          </div>
-          <div class="work_caption column">
-            <h1 class="title">プロダクトのなまえ</h1>
-            <p>ひとこと</p>
-          </div>
+        <div class="details">
+          <!--<hooper>
+            <slide>-->
+              <div class="columns">
+                <div class="work_img column">
+                  <img src="##" alt="なんかのプロダクト">
+                </div>
+                <div class="work_caption column">
+                  <h1 class="title">プロダクトのなまえ</h1>
+                  <p>ひとこと</p>
+                </div>
+              </div>
+          <!--  </slide>
+            <slide>
+              <div class="columns">
+                <div class="work_img column" style="border: 2px solid #000;">
+                  <img src="##" alt="なんかのプロダクト">
+                </div>
+                <div class="work_caption column" style="border: 2px solid #000;">
+                  <h1 class="title">プロダクトのなまえ</h1>
+                  <p>ひとこと</p>
+                </div>
+              </div>
+            </slide>
+          </hooper>-->
         </div>
       </div>
     </section>
@@ -49,6 +66,11 @@
       <div class="contents">
         <div class="caption">
           <h1 class="title is-1">Contact</h1>
+          <ul>
+            <li v-for="work in works">
+              {{ work.name }}
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -56,11 +78,19 @@
 </template>
 
 <script>
-//import Contact from '~/components/contact.vue'
+import { mapActions } from 'vuex'
 
 export default {
-  components: {
-    //Contact
+  data(){
+    return {}
+  },
+  computed: {
+    works(){
+      return this.$store.state.works.list
+    }
+  },
+  async mounted(){
+    this.$store.dispatch("works/fetchWorks")
   }
 }
 </script>
@@ -80,17 +110,13 @@ export default {
   padding: 50px;
 }
 
-img{
-  border: 2px solid #000;
-}
-
 .title{
   padding-top: 50px;
 }
 
 #home{
   height: 80vh;
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 .work_img{
