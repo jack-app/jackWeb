@@ -3,14 +3,14 @@
   <nav class="navbar has-shadow is-fixed-top">
     <div class="container">
       <div class="navbar-brand jack-icon">
-        <img src="~/static/jack-icon.png" alt="jackのアイコン">
+        <a href="#home"><img src="~/static/jack-icon.png" alt="jackのアイコン"></a>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
-          <p class="navbar-item"><a href="#home">Home</a></p>
-          <p class="navbar-item"><a href="#about">About us</a></p>
-          <p class="navbar-item"><a href="#works">Works</a></p>
-          <p class="navbar-item"><a href="#contact">Contact</a></p>
+          <p class="navbar-item" style="font-size:1.5em;"><a href="#home">Home</a></p>
+          <p class="navbar-item" style="font-size:1.5em;"><a href="#about">About us</a></p>
+          <p class="navbar-item" style="font-size:1.5em;"><a href="#works">Works</a></p>
+          <p class="navbar-item" style="font-size:1.5em;"><a href="#contact">Contact</a></p>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ html {
   }
 
 .navbar .container{
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .footer{
