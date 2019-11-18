@@ -22,9 +22,11 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 >
-##使用モジュール
+
+## 使用モジュール
 axios, hooper
 
 >
-##使用フォント
+
+## 使用フォント
 Noto Sans JP light/bold (GoogleFonts)
