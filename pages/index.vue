@@ -3,30 +3,15 @@
     <section id="home">
       <div class="contents">
         <div class="details">
-          <!--<hooper>
-            <slide>-->
-              <div class="columns">
-                <div class="work_img column">
-                  <img src="##" alt="なんかのプロダクト">
-                </div>
-                <div class="work_caption column">
-                  <h1 class="title">プロダクトのなまえ</h1>
-                  <p>ひとこと</p>
-                </div>
-              </div>
-          <!--  </slide>
-            <slide>
-              <div class="columns">
-                <div class="work_img column" style="border: 2px solid #000;">
-                  <img src="##" alt="なんかのプロダクト">
-                </div>
-                <div class="work_caption column" style="border: 2px solid #000;">
-                  <h1 class="title">プロダクトのなまえ</h1>
-                  <p>ひとこと</p>
-                </div>
-              </div>
-            </slide>
-          </hooper>-->
+          <div class="columns">
+            <div class="column">
+              <img src="##" class="work_img">
+            </div>
+            <div class="work_caption column">
+              <h1 class="title is-2"></h1>
+              <p>ほげ</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -49,14 +34,11 @@
           <h1 class="title is-1">Works</h1>
         </div>
         <div class="details columns">
-          <div class="work column">
-            <img src="##" alt="なんかのげーむ">
-          </div>
-          <div class="work column">
-            <img src="##" alt="なんかのげーむ">
-          </div>
-          <div class="work column">
-            <img src="##" alt="なんかのげーむ">
+          <div class="work column is-tablet is-4 is-multiline" v-for="work in works">
+            <div class="icon_wrapper">
+              <!--<img :src="work.icon.fileURL" alt="なんかのげーむ" v-if="work.icon.fileURL">-->
+            </div>
+            <p>{{ works.name }}</p>
           </div>
         </div>
       </div>
@@ -66,11 +48,6 @@
       <div class="contents">
         <div class="caption">
           <h1 class="title is-1">Contact</h1>
-          <ul>
-            <li v-for="work in works">
-              {{ work.name }}
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -79,10 +56,14 @@
 
 <script>
 import { mapActions } from 'vuex'
+import axios from 'axios'
+//import Work from 'work'
 
 export default {
   data(){
-    return {}
+    return {
+      works: []
+    }
   },
   computed: {
     works(){
@@ -90,7 +71,12 @@ export default {
     }
   },
   async mounted(){
-    this.$store.dispatch("works/fetchWorks")
+    axios.get("https://jackun-develop.herokuapp.com/api/v1/products").then(resp => {
+      resp.data.forEach(function(work){
+        works.push(new $Work(work))
+        console.log("ほげ")
+      })
+    })
   }
 }
 </script>
@@ -107,7 +93,8 @@ export default {
 
 .contents{
   width: 100%;
-  padding: 50px;
+  padding: 50px 10vw;
+  min-height: 100%;
 }
 
 .title{
@@ -115,15 +102,15 @@ export default {
 }
 
 #home{
-  height: 80vh;
+  height: 90vh;
   padding-top: 100px;
 }
 
 .work_img{
-  height: 300px;
-  display: flex;
+  height: 400px;
+/*  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #about{
@@ -131,10 +118,20 @@ export default {
 }
 
 .details{
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10%;
+  flex-wrap: wrap;
 }
 
 #contact{
   background-color: #FFE0A5;
+}
+
+.icon_wrapper{
+  width: 250px;
+  height: 250px;
+  background-color: #EEEEEE;
+  border-radius: 20px;
 }
 </style>
