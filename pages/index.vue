@@ -55,9 +55,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import axios from 'axios'
-//import Work from 'work'
 
 export default {
   data(){
@@ -65,16 +63,10 @@ export default {
       works: []
     }
   },
-  computed: {
-    works(){
-      return this.$store.state.works.list
-    }
-  },
   async mounted(){
     axios.get("https://jackun-develop.herokuapp.com/api/v1/products").then(resp => {
       resp.data.forEach(function(work){
-        works.push(new $Work(work))
-        console.log("ほげ")
+        works.push(new this.$Work(work))
       })
     })
   }
