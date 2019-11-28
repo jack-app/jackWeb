@@ -60,6 +60,7 @@ import axios from 'axios'
 //import Work from 'work'
 
 export default {
+  /*
   data(){
     return {
       works: []
@@ -78,6 +79,7 @@ export default {
       })
     })
   }
+  */
 }
 </script>
 
