@@ -20,10 +20,12 @@
       <div class="contents">
         <div class="caption">
           <h1 class="title is-1">About us</h1>
-          <p class="subtitle is-4">jackについて</p>
+          <p class="subtitle"><span style="padding-left:1em;"></span>jackについて</p>
         </div>
-        <div class="details">
-          <p>jackはほげほげほげほげ<br>ほげほげほげほげ<br>ほげほげほげほげほげ</p>
+        <div class="details content">
+          <p>jackは名古屋大学を中心とした、アプリを制作するサークル・団体です。</p>
+          <p>Webサービスやスマホアプリ、ゲーム等を制作・運営しています。</p>
+          <p>プログラミング、デザイン、マーケティング等様々なスキルを持ったメンバーが集まっており、個人またはチームで開発をしています。</p>
         </div>
       </div>
     </section>
@@ -34,11 +36,11 @@
           <h1 class="title is-1">Works</h1>
         </div>
         <div class="details columns">
-          <div class="work column is-tablet is-4 is-multiline" v-for="work in works">
+          <div class="work column is-tablet is-4 is-multiline">
             <div class="icon_wrapper">
               <!--<img :src="work.icon.fileURL" alt="なんかのげーむ" v-if="work.icon.fileURL">-->
             </div>
-            <p>{{ works.name }}</p>
+            <p>ほげ</p>
           </div>
         </div>
       </div>
@@ -55,31 +57,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import axios from 'axios'
-//import Work from 'work'
-
 export default {
-  /*
-  data(){
-    return {
-      works: []
-    }
-  },
-  computed: {
-    works(){
-      return this.$store.state.works.list
-    }
-  },
-  async mounted(){
-    axios.get("https://jackun-develop.herokuapp.com/api/v1/products").then(resp => {
-      resp.data.forEach(function(work){
-        works.push(new $Work(work))
-        console.log("ほげ")
-      })
-    })
-  }
-  */
+
 }
 </script>
 
@@ -89,8 +68,8 @@ export default {
   min-width: 100vw;
   /*display: flex;
   justify-content: center;*/
-  align-items: center;
-  text-align: center;
+  /*align-items: center;
+  text-align: center;*/
 }
 
 .contents{
@@ -120,9 +99,7 @@ export default {
 }
 
 .details{
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 10%;
+  padding: 50px;
   flex-wrap: wrap;
 }
 
