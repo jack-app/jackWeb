@@ -1,19 +1,7 @@
 <template>
 <div class="layout">
   <nav class="navbar has-shadow is-fixed-top">
-    <div class="container">
-      <div class="navbar-brand jack-icon">
-        <a href="#home"><img src="~/static/jack-icon.png" alt="jackのアイコン"></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <p class="navbar-item" style="font-size:1.5em;"><a href="#home">Home</a></p>
-          <p class="navbar-item" style="font-size:1.5em;"><a href="#about">About us</a></p>
-          <p class="navbar-item" style="font-size:1.5em;"><a href="#works">Works</a></p>
-          <p class="navbar-item" style="font-size:1.5em;"><a href="#contact">Contact</a></p>
-        </div>
-      </div>
-    </div>
+    <navbar/>
   </nav>
   <nuxt />
   <footer class="footer">
@@ -24,10 +12,20 @@
 </div>
 </template>
 
+<script>
+import Navbar from '~/components/Navbar.vue'
+
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
+
 <style>
 html {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 16px;
+  font-size: 1.5em;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
