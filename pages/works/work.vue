@@ -43,9 +43,6 @@ export default {
     height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
-<<<<<<< HEAD
     opacity: 0.7;
-=======
->>>>>>> a7940a255a25738200701b5cc6d18f286dc14de1
 }
 </style>
