@@ -59,6 +59,8 @@
 <script>
 //import Work from 'work'
 
+const BASE_URL = 'https://jackun-develop.herokuapp.com/api/v1/products';
+
 export default {
   /*
   data(){
@@ -80,6 +82,18 @@ export default {
     })
   }
   */
+
+  async asyncData(context){
+    try {
+      const response = await axios.get(BASE_URL),
+
+      return {
+          productList: response.data
+        };
+    } catch(error){
+        console.log(error);
+    }
+  }
 }
 </script>
 
