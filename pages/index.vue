@@ -9,7 +9,7 @@
             </div>
             <div class="work_caption column">
               <h1 class="title is-2">{{ data[1].name }}</h1>
-              <p>{{ data[1].catchphrase }}</p>
+              <p>{{ data[1].catchphrase }}<br>ここはスライドショーにする予定</p>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <h1 class="title is-1">Works</h1>
         </div>
         <div class="details columns">
-          <div class="work column" v-for="item in data" :key="item.id">
+          <div class="work column is-half-mobile" v-for="item in data" :key="item.id">
             <div class="icon_wrapper">
               <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
             </div>
@@ -71,12 +71,9 @@ export default {
 
 <style>
 .container {
-  min-height: 100vh;
+  min-height: 80vh;
   min-width: 100vw;
-  /*display: flex;
-  justify-content: center;*/
-  /*align-items: center;
-  text-align: center;*/
+  padding-top: 100px;
 }
 
 .contents{
@@ -91,7 +88,6 @@ export default {
 
 #home{
   min-height: 90vh;
-  padding-top: 100px;
 }
 
 .work_img{
@@ -125,6 +121,7 @@ export default {
   /* display: flex;
   flex-direction: column;
   justify-content: flex-end; */
+  margin: 50px 0;
 }
 
 .icon_wrapper{
@@ -135,6 +132,13 @@ export default {
   border-radius: 20px;
   -webkit-filter: drop-shadow(0 3px 10px rgba(0,0,0,.3));
   filter: drop-shadow(0 3px 4px rgba(0,0,0,.3));
+}
+
+@media screen and (max-width: 768px){
+ .icon_wrapper{
+   width: 150px;
+   height: 150px;
+ }
 }
 
 .icon{
