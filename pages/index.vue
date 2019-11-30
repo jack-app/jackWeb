@@ -5,11 +5,11 @@
         <div class="details">
           <div class="columns">
             <div class="column">
-              <img src="##" class="work_img">
+              <img :src="data[1].icon.fileURL" class="work_img">
             </div>
             <div class="work_caption column">
-              <h1 class="title is-2"></h1>
-              <p>ほげ</p>
+              <h1 class="title is-2">{{ data[1].name }}</h1>
+              <p>{{ data[1].catchphrase }}</p>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="contents">
         <div class="caption">
           <h1 class="title is-1">About us</h1>
-          <p class="subtitle"><span style="padding-left:1em;"></span>jackについて</p>
+          <p class="subtitle is-6"><span style="padding-left:10px;"></span>jackについて</p>
         </div>
         <div class="details content">
           <p>jackは名古屋大学を中心とした、アプリを制作するサークル・団体です。</p>
@@ -36,11 +36,11 @@
           <h1 class="title is-1">Works</h1>
         </div>
         <div class="details columns">
-          <div class="work column is-tablet is-4 is-multiline">
+          <div class="work column is-tablet is-4 is-multiline" v-for="item in data" :key="item.id">
             <div class="icon_wrapper">
-              <!--<img :src="work.icon.fileURL" alt="なんかのげーむ" v-if="work.icon.fileURL">-->
+              <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
             </div>
-            <p>ほげ</p>
+            <p>{{ item.name }}</p>
           </div>
         </div>
       </div>
@@ -50,6 +50,10 @@
       <div class="contents">
         <div class="caption">
           <h1 class="title is-1">Contact</h1>
+          <p class="subtitle is-6"><span style="padding-left:10px;"></span>プロダクトに関するお問い合わせ</p>
+        </div>
+        <div class="details content">
+          <p>GoogleForm埋め込みまーす</p>
         </div>
       </div>
     </section>
@@ -58,7 +62,10 @@
 
 <script>
 export default {
-
+  async asyncData({$axios}){
+      const response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
+      return { data: response }
+  }
 }
 </script>
 
@@ -83,7 +90,7 @@ export default {
 }
 
 #home{
-  height: 90vh;
+  min-height: 90vh;
   padding-top: 100px;
 }
 
@@ -108,9 +115,18 @@ export default {
 }
 
 .icon_wrapper{
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: #EEEEEE;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(0 3px 10px rgba(0,0,0,.3));
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,.3));
+}
+
+.icon{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
 }
 </style>
