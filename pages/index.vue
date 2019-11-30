@@ -36,11 +36,11 @@
           <h1 class="title is-1">Works</h1>
         </div>
         <div class="details columns">
-          <div class="work column is-tablet is-4 is-multiline" v-for="item in data" :key="item.id">
+          <div class="work column" v-for="item in data" :key="item.id">
             <div class="icon_wrapper">
               <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
             </div>
-            <p>{{ item.name }}</p>
+            <h1>{{ item.name }}</h1>
           </div>
         </div>
       </div>
@@ -110,13 +110,27 @@ export default {
   flex-wrap: wrap;
 }
 
+@media screen and (max-width: 768px){
+  .details{
+    padding: 50px 0;
+  }
+}
+
 #contact{
   background-color: #FFE0A5;
+}
+
+.work{
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-end; */
 }
 
 .icon_wrapper{
   width: 200px;
   height: 200px;
+  margin: 10px auto;
   background-color: #EEEEEE;
   border-radius: 20px;
   -webkit-filter: drop-shadow(0 3px 10px rgba(0,0,0,.3));

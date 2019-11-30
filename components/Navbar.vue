@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container nav">
     <div class="navbar-brand">
       <div class="jack-icon">
         <a href="#home"><img src="~/static/jack-icon.png" alt="jackのアイコン"></a>
@@ -30,7 +30,7 @@ export default{
 </script>
 
 <style scoped>
-.container{
+.nav{
   padding: 0 50px;
 }
 </style>

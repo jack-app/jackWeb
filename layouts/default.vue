@@ -25,13 +25,19 @@ export default {
 <style>
 html {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px){
+  html{
+    font-size: 1em;
+  }
 }
 
 *,
@@ -46,11 +52,12 @@ html {
   height: 100px;
 }
 
-@media screen and (max-width: 1023px)
+@media screen and (max-width: 768px){
   .jack-icon{
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
   }
+}
 
 .navbar .container{
   padding: 0 50px;
