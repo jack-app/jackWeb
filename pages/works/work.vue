@@ -13,6 +13,9 @@
               </div>
               <div class="content">
                 <p>{{ data[1].catchphrase }}</p>
+                <div v-html="$md.render(description)">
+                  <p>{{ data[1].description }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -45,7 +48,8 @@ export default {
       const response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
       return {
         data: response,
-        backgroundUrl: response[1].header.fileURL
+        backgroundUrl: response[1].header.fileURL,
+        description: response[1].description
        }
   }
 }
