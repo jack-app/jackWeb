@@ -1,15 +1,42 @@
 <template>
-  <div class="container">
-    <section>
-      <div class="work_header"　:style="{backgroundImage: 'url('+ backgroundUrl +')'}">
-        <div class="contents">
-
-          <h1>Hello Vue!!</h1>
-
+  <section id="work">
+    <div class="work_bg hero"　:style="{backgroundImage: 'url('+ backgroundUrl +')'}">
+      <div class="hero-body">
+        <div class="container">
+          <div class="box">
+            <div class="media-content">
+              <div class="caption">
+                <figure class="image is-128x128">
+                  <img :src="data[1].icon.fileURL" alt="アイコン" class="icon">
+                </figure>
+                <h1 class="title">{{ data[1].name }}</h1>
+              </div>
+              <div class="content">
+                <p>{{ data[1].catchphrase }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="previos">
+        <button type="button" name="button"></button>
+        <div class="text">
+          <p>Previos</p>
+          <h1>{{ data[0].name }}</h1>
+        </div>
+        <div class="Next">
+          <button type="button" name="button"></button>
+          <div class="text">
+            <p>Next</p>
+            <h1>{{ data[2].name }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -26,23 +53,23 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  min-height: 80vh;
-  min-width: 100vw;
-  padding-top: 100px;
-}
-
-.contents{
-  width: 100%;
-  padding: 50px 10vw;
-  min-height: 100%;
-}
-
-.work_header{
+.work_bg{
     width: 100vw;
     height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .work_bg{
+    height: 600px;
+  }
+}
+
+.icon{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 </style>

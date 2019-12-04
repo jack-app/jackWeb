@@ -1,15 +1,13 @@
 <template>
-<div class="layout">
-  <nav class="navbar has-shadow is-fixed-top">
-    <navbar/>
-  </nav>
-  <nuxt />
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>2020@jackun</p>
-    </div>
-  </footer>
-</div>
+  <div>
+    <Navbar/>
+      <nuxt/>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>2020@jackun</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -18,6 +16,11 @@ import Navbar from '~/components/Navbar.vue'
 export default {
   components: {
     Navbar
+  },
+  head: {
+    bodyAttrs: {
+      class: 'has-navbar-fixed-top'
+    }
   }
 }
 </script>
@@ -45,22 +48,6 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-
-.jack-icon{
-  width: 100px;
-  height: 100px;
-}
-
-@media screen and (max-width: 768px){
-  .jack-icon{
-    width: 80px;
-    height: 80px;
-  }
-}
-
-.navbar .container{
-  padding: 0 50px;
 }
 
 .footer{
