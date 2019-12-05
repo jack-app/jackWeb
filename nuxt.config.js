@@ -51,7 +51,11 @@ module.exports = {
     preset: 'default',
     linkify: true,
     breaks: true,
+    html: true,
     injected: true,
+    use: [
+      'markdown-it-video'
+    ]
   },
   /*
   ** Build configuration

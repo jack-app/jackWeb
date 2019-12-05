@@ -5,19 +5,19 @@
         <div class="container">
           <div class="box">
             <div class="media-content">
-              <div class="caption">
-                <figure class="image is-128x128">
-                  <img :src="data[1].icon.fileURL" alt="アイコン" class="icon">
-                </figure>
-                <h1 class="title">{{ data[1].name }}</h1>
-              </div>
               <div class="content">
-                <p>{{ data[1].catchphrase }}</p>
-                <div v-html="$md.render(description)">
-                  <p>{{ data[1].description }}</p>
+                <div class="caption">
+                  <figure class="image is-128x128">
+                    <img :src="data[1].icon.fileURL" alt="アイコン" class="icon">
+                  </figure>
+                  <h1 class="title">{{ data[1].name }}</h1>
+                  <p class="subtitle">{{ data[1].catchphrase }}</p>
+                </div>          
+                <div v-html="$md.render(description)" class="markdown">
+                  {{ data[1].description }}
                 </div>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -70,10 +70,8 @@ export default {
   }
 }
 
-.icon{
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
+.markdown{
+  background-color: pink;
+  font-size: 0.7em;
 }
 </style>
