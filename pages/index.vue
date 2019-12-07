@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <section id="home">
-      <div class="contents">
+  <div>
+    <section id="home" class="section">
+      <div class="container">
         <div class="details">
           <div class="columns">
             <div class="column">
@@ -16,41 +16,44 @@
       </div>
     </section>
 
-    <section id="about">
-      <div class="contents">
+    <section id="about" class="section">
+      <div class="container">
         <div class="caption">
-          <h1 class="title is-1">About us</h1>
-          <p class="subtitle is-6"><span style="padding-left:10px;"></span>jackについて</p>
+          <h1 class="title is-2">About us</h1>
+          <p class="subtitle is-6"><span style="padding-left:5px;"></span>jackについて</p>
         </div>
         <div class="details content">
-          <p>jackは名古屋大学を中心とした、アプリを制作するサークル・団体です。</p>
+          <p><span style="padding-left:5px;"></span>jackは名古屋大学を中心とした、アプリを制作するサークル・団体です。</p>
           <p>Webサービスやスマホアプリ、ゲーム等を制作・運営しています。</p>
           <p>プログラミング、デザイン、マーケティング等様々なスキルを持ったメンバーが集まっており、個人またはチームで開発をしています。</p>
         </div>
       </div>
     </section>
 
-    <section id="works">
-      <div class="contents">
+    <section id="works" class="section">
+      <div class="container">
         <div class="caption">
-          <h1 class="title is-1">Works</h1>
+          <h1 class="title is-2">Works</h1>
+          <p class="subtitle is-6"><span style="padding-left:5px;"></span>プロダクト一覧</p>
         </div>
-        <div class="details columns">
-          <div class="work column is-half-mobile" v-for="item in data" :key="item.id">
-            <div class="icon_wrapper">
-              <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
+        <div class="details columns is-mobile is-multiline is-centered">
+          <div class="column is-narrow" v-for="item in data" :key="item.id">
+            <div class="work">
+              <figure class="image is-128x128 block_center">
+                <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
+              </figure>
+              <h1>{{ item.name }}</h1>
             </div>
-            <h1>{{ item.name }}</h1>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="contents">
+    <section id="contact" class="section">
+      <div class="container">
         <div class="caption">
-          <h1 class="title is-1">Contact</h1>
-          <p class="subtitle is-6"><span style="padding-left:10px;"></span>プロダクトに関するお問い合わせ</p>
+          <h1 class="title is-2">Contact</h1>
+          <p class="subtitle is-6"><span style="padding-left:2px;"></span>プロダクトに関するお問い合わせ</p>
         </div>
         <div class="details content">
           <p>GoogleForm埋め込みまーす</p>
@@ -70,18 +73,6 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 80vh;
-  min-width: 100vw;
-  padding-top: 100px;
-}
-
-.contents{
-  width: 100%;
-  padding: 50px 10vw;
-  min-height: 100%;
-}
-
 .title{
   padding-top: 50px;
 }
@@ -92,9 +83,6 @@ export default {
 
 .work_img{
   height: 400px;
-/*  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 #about{
@@ -118,33 +106,23 @@ export default {
 
 .work{
   text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end; */
-  margin: 50px 0;
-}
-
-.icon_wrapper{
-  width: 200px;
-  height: 200px;
-  margin: 10px auto;
-  background-color: #EEEEEE;
-  border-radius: 20px;
-  -webkit-filter: drop-shadow(0 3px 10px rgba(0,0,0,.3));
-  filter: drop-shadow(0 3px 4px rgba(0,0,0,.3));
+  margin: 50px 30px;
 }
 
 @media screen and (max-width: 768px){
- .icon_wrapper{
-   width: 150px;
-   height: 150px;
- }
+  .work{
+    margin: 20px;
+  }
+}
+
+.block_center{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .icon{
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  width: 128px;
+  height: 128px;
   border-radius: 20px;
 }
 </style>

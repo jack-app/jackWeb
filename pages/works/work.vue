@@ -12,7 +12,7 @@
                   </figure>
                   <h1 class="title">{{ data[1].name }}</h1>
                   <p class="subtitle">{{ data[1].catchphrase }}</p>
-                </div>          
+                </div>
                 <div v-html="$md.render(description)" class="markdown">
                   {{ data[1].description }}
                 </div>
@@ -25,13 +25,13 @@
 
     <div class="hero-foot">
       <div class="previos">
-        <button type="button" name="button"></button>
+        <button type="button" name="button" class="button"></button>
         <div class="text">
           <p>Previos</p>
           <h1>{{ data[0].name }}</h1>
         </div>
         <div class="Next">
-          <button type="button" name="button"></button>
+          <button type="button" name="button" class="button"></button>
           <div class="text">
             <p>Next</p>
             <h1>{{ data[2].name }}</h1>
