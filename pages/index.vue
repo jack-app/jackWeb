@@ -2,21 +2,26 @@
   <div>
     <section id="home" class="section">
       <div class="container">
-        <swiper>
-          <swiper-slide v-for="work in data" :key="work.id">
-            <div class="details">
-              <div class="columns">
-                <div class="column">
-                  <img :src="work.icon.fileURL" :alt="work.name" class="work_img">
-                </div>
-                <div class="work_caption column">
-                  <h1 class="title is-2">{{ work.name }}</h1>
-                  <p>{{ work.catchphrase }}</p>
+        <div class="swiper-container">
+          <swiper :options="swiperOption">
+            <swiper-slide v-for="work in data" :key="work.id">
+              <div class="details">
+                <div class="columns">
+                  <div class="column">
+                    <img :src="work.icon.fileURL" :alt="work.name" class="work_img">
+                  </div>
+                  <div class="work_caption column">
+                    <h1 class="title is-2">{{ work.name }}</h1>
+                    <p>{{ work.catchphrase }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-        </swiper-slide>
-      </swiper>
+            </swiper-slide>
+            <div class="swiper-pagination" slot="pagination"></div>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+        </div>
       </div>
     </section>
 
@@ -72,21 +77,43 @@ export default {
   async asyncData({$axios}){
       const response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
       return { data: response }
+  },
+  data(){
+    return{
+      swiperOption: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        speed: 1000,
+        autoplay:{
+          delay: 7000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .title{
   padding-top: 50px;
 }
 
 #home{
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 .work_img{
-  height: 400px;
+  height: 350px;
 }
 
 #about{
