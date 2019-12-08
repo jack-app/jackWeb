@@ -2,17 +2,21 @@
   <div>
     <section id="home" class="section">
       <div class="container">
-        <div class="details">
-          <div class="columns">
-            <div class="column">
-              <img :src="data[1].icon.fileURL" class="work_img">
+        <swiper>
+          <swiper-slide v-for="work in data" :key="work.id">
+            <div class="details">
+              <div class="columns">
+                <div class="column">
+                  <img :src="work.icon.fileURL" :alt="work.name" class="work_img">
+                </div>
+                <div class="work_caption column">
+                  <h1 class="title is-2">{{ work.name }}</h1>
+                  <p>{{ work.catchphrase }}</p>
+                </div>
+              </div>
             </div>
-            <div class="work_caption column">
-              <h1 class="title is-2">{{ data[1].name }}</h1>
-              <p>{{ data[1].catchphrase }}<br>ここはスライドショーにする予定</p>
-            </div>
-          </div>
-        </div>
+        </swiper-slide>
+      </swiper>
       </div>
     </section>
 

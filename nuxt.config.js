@@ -24,12 +24,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'swiper/dist/css/swiper.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
   //  { src: '@/plugins/work', ssr: false }
+    {src: '~/plugins/vue-awesome-swiper', ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules
@@ -72,6 +74,9 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    vendor: [
+      'vue-awesome-swiper'
+    ]
   }
 }

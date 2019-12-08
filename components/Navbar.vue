@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar has-shadow is-fixed-top">
     <div class="container">
-      <div class="navbar-brand ">
+      <div class="navbar-brand">
         <div class="jack-icon">
           <a href="/"><img src="~/static/jack-icon.png" alt="jackのアイコン"></a>
         </div>
