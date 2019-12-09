@@ -2,26 +2,35 @@
   <div>
     <section id="home" class="section">
       <div class="container">
-        <div class="swiper-container">
-          <swiper :options="swiperOption">
-            <swiper-slide v-for="work in data" :key="work.id">
-              <div class="details">
-                <div class="columns">
-                  <div class="column">
-                    <img :src="work.icon.fileURL" :alt="work.name" class="work_img">
-                  </div>
-                  <div class="work_caption column">
-                    <h1 class="title is-2">{{ work.name }}</h1>
-                    <p>{{ work.catchphrase }}</p>
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="work in data" :key="work.id">
+            <div class="details">
+              <div class="card card-slide">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img :src="work.header.fileURL" :alt="work.name">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-128x128">
+                        <img :src="work.icon.fileURL" :alt="work.name" class="icon">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title">{{ work.name }}</p>
+                        <p>{{ work.catchphrase }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
-          </swiper>
-        </div>
+            </div>
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
       </div>
     </section>
 
@@ -52,8 +61,8 @@
                 <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
               </figure>
               <h1>{{ item.name }}</h1>
-            </div>
-          </div>
+           </div>
+         </div>
         </div>
       </div>
     </section>
@@ -104,16 +113,13 @@ export default {
 </script>
 
 <style scoped>
-.title{
-  padding-top: 50px;
-}
-
 #home{
   min-height: 80vh;
 }
 
-.work_img{
-  height: 350px;
+.card-slide{
+  width: 600px;
+  margin: 0 auto 50px;
 }
 
 #about{
@@ -121,13 +127,12 @@ export default {
 }
 
 .details{
-  padding: 50px;
-  flex-wrap: wrap;
+  margin: 20px 80px;
 }
 
 @media screen and (max-width: 768px){
   .details{
-    padding: 50px 0;
+    margin: 60px;
   }
 }
 
@@ -152,8 +157,6 @@ export default {
 }
 
 .icon{
-  width: 128px;
-  height: 128px;
   border-radius: 20px;
 }
 </style>
