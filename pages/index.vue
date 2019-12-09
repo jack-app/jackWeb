@@ -4,7 +4,7 @@
       <div class="container">
         <swiper :options="swiperOption">
           <swiper-slide v-for="work in data" :key="work.id">
-            <div class="details">
+            <div class="card-wrapper">
               <div class="card card-slide">
                 <div class="card-image">
                   <figure class="image is-2by1">
@@ -74,7 +74,10 @@
           <p class="subtitle is-6"><span style="padding-left:2px;"></span>プロダクトに関するお問い合わせ</p>
         </div>
         <div class="details content">
-          <p>GoogleForm埋め込みまーす</p>
+          <p>プロダクトに関する質問、感想等あればこちらのフォームにてご連絡ください。</p>
+          <div class="form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMPwUIL_1MAgUjFfhbWmttseeSpp3smPFqsf_JAhXxTw1_Mg/viewform?embedded=true" width="100%" height="532" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -113,9 +116,9 @@ export default {
 </script>
 
 <style scoped>
-#home{
+/* #home{
   min-height: 80vh;
-}
+} */
 
 .card-slide{
   width: 600px;
@@ -126,18 +129,26 @@ export default {
   background-color: #FDBE46;
 }
 
-.details{
+.card-wrapper{
   margin: 20px 80px;
 }
 
+.details{
+  margin: 60px;
+}
+
 @media screen and (max-width: 768px){
-  .details{
-    margin: 60px;
+  .card-wrapper,.details{
+    margin: 30px;
   }
 }
 
 #contact{
   background-color: #FFE0A5;
+}
+
+.form{
+  margin-top: 60px;
 }
 
 .work{
@@ -158,5 +169,6 @@ export default {
 
 .icon{
   border-radius: 20px;
+  box-shadow: 0 0.5em 1em rgba(10, 10, 10, 0.15);
 }
 </style>
