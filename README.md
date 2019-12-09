@@ -24,7 +24,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 >
 
 ## 使用モジュール
-axios, hooper
+axios, vue-awesome-swiper, @nuxt/markdownit
 
 >
 
