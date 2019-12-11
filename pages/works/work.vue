@@ -44,6 +44,10 @@
 
 <script>
 export default {
+  async fetch({store,$axios}) {
+      let response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
+      store.commit('works/setworks', response)
+  },
   async asyncData({$axios}){
       const response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
       return {
