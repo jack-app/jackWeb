@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const state = () => ({
   works:[]
 })
@@ -8,16 +10,16 @@ export const mutations = {
   }
 }
 
-/*export const actions = {
+export const actions = {
   async fetchWorks({commit}) {
       //const url = 'https://jackun-develop.herokuapp.com/api/v1/products'
-      let res = await this.$axios.get('https://jackun-develop.herokuapp.com/api/v1/products')
+      let res = await this.$axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
       //const works = res.data
-      console.log(res.data)
-      commit('setworks',res.data)
+      //console.log(res.data)
+      commit('setworks',res)
   }
-}*/
-export const actions = {
+}
+/*export const actions = {
  fetchWorks(context) {
   return axios.get('https://jackun-develop.herokuapp.com/api/v1/products')
    .then(response => {
@@ -27,7 +29,7 @@ export const actions = {
     console.log(reason.message)
    })
  }
-}
+}*/
 
 export const getters = {
   allworks: function(state){
