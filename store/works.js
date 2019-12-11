@@ -33,11 +33,11 @@ export const getters = {
   allworks: function(state){
     return state.works
   },
-  awork: function(state,object){
-    state.works.foreach(function(work){
+  /*awork: function(state,object){
+    state.works.forEach(function(work){
       if(work==object){
         return {id:work.id}
       }
-    })
-  }
+    });
+  }*/
 }
