@@ -35,11 +35,7 @@ export const getters = {
   allworks: function(state){
     return state.works
   },
-  /*awork: function(state,object){
-    state.works.forEach(function(work){
-      if(work==object){
-        return {id:work.id}
-      }
-    });
-  }*/
+  awork:(state) => (name) => {
+    return state.works.find(work => work.name === name)
+  }
 }
