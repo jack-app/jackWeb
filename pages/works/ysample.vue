@@ -1,19 +1,25 @@
 <template>
-<p>{{$store.state.animal}}</p>
+<div>
+<p>{{getaWork("ShokupanGirl")}}</p>
+</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  /*async fetch({store,params}){
-    await store.dispatch('fetchWorks');
-  },*/
-  /*created(){
-    this.$store.dispatch('fetchWorks')
-  },*/
-  async fetch({store,$axios}) {
-      let response = await $axios.$get('https://jackun-develop.herokuapp.com/api/v1/products')
-      store.commit('works/setworks', response)
+  async fetch({store}){
+    await store.dispatch('works/fetchWorks')
   },
+  computed:{
+    ...mapGetters({
+      getWorks: 'works/allworks',
+      getaWork: 'works/awork'
+    })
+    /*getworks(){
+      var response = store.getters.awork("ShokupanGirl")
+      store.commit('yani/setanimal', response)
+    }*/
+  }
 }
 
 </script>
