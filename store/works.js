@@ -37,5 +37,8 @@ export const getters = {
   },
   awork:(state) => (name) => {
     return state.works.find(work => work.name === name)
+  },
+  workbyid:(state) => (id) => {
+    return state.works.find(work => work.id === id)
   }
 }
