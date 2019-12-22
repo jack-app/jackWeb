@@ -1,9 +1,0 @@
-<template>
-  <div>
-    <swiper>
-      <swiper-slide>スライド１</swiper-slide>
-      <swiper-slide>スライド２</swiper-slide>
-      <swiper-slide>スライド３</swiper-slide>
-    </swiper>
-  </div>
-</template>

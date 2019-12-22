@@ -2,20 +2,18 @@
   <div>
     <Navbar/>
       <nuxt/>
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>2020@jackun</p>
-      </div>
-    </footer>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from '~/components/Navbar.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
   head: {
     bodyAttrs: {
@@ -48,9 +46,5 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-
-.footer{
-  background-color: #FDBE46;
 }
 </style>

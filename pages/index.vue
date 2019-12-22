@@ -7,15 +7,15 @@
             <div class="card-wrapper">
               <div class="card card-slide">
                 <div class="card-image">
-                  <figure class="image is-2by1">
-                    <img :src="work.header.fileURL" :alt="work.name">
+                  <figure class="image is-2by1" style="background-color:#ced5da">
+                    <img v-if="work.header" :src="work.header.fileURL" :alt="work.name">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
-                      <figure class="image is-128x128">
-                        <img :src="work.icon.fileURL" :alt="work.name" class="icon">
+                      <figure class="image is-128x128 icon" style="background-color:#ced5da">
+                        <img v-if="work.icon" :src="work.icon.fileURL" :alt="work.name" class="icon">
                       </figure>
                     </div>
                     <div class="media-content">
@@ -54,15 +54,32 @@
           <h1 class="title is-2">Works</h1>
           <p class="subtitle is-6"><span style="padding-left:5px;"></span>プロダクト一覧</p>
         </div>
-        <div class="details columns is-mobile is-multiline is-centered">
-          <div class="column is-narrow" v-for="item in data" :key="item.id">
-            <div class="work">
-              <figure class="image is-128x128 block_center">
-                <img class="icon" v-if="item.icon" :src="item.icon.fileURL" :alt="item.name">
-              </figure>
-              <h1>{{ item.name }}</h1>
-           </div>
-         </div>
+        <div class="details columns is-multiline is-centered">
+          <div class="column is-one-third" v-for="item in data" :key="item.id">
+            <div class="card card-slide">
+              <div class="card-image">
+                <figure class="image is-2by1" style="background-color:#ced5da">
+                  <img v-if="item.header" :src="item.header.fileURL" :alt="item.name">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96 icon" style="background-color:#ced5da">
+                      <img v-if="item.icon" :src="item.icon.fileURL" :alt="item.name" class="icon">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                      <p class="title is-4">{{ item.name }}</p>
+                      <p class="subtitle is-7">{{ item.catchphrase }}</p>
+                  </div>
+                </div>
+                <!--<div class="card-footer">
+                  <nuxt-link to="/works/'${ item.id }'}">more</nuxt-link>
+                </div>-->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -126,7 +143,7 @@ export default {
 }
 
 #about{
-  background-color: #FDBE46;
+  background-color: #FFAD12;
 }
 
 .card-wrapper{
